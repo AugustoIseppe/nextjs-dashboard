@@ -1,5 +1,5 @@
 import Image from "next/image";
-import explorador from "./assets/explorador.webp";
+import explorador from "@/assets/explorador.webp";
 import Link from "next/link";
 
 export default function Pagina404() {
