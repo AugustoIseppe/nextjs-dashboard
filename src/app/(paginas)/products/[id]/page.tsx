@@ -3,19 +3,17 @@ import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import Products from "@/data/model/Products"; // Importe o seu modelo de Produtos
 import Image from "next/image";
-
-// Simulando um fetch de dados, você pode trocar para uma requisição de API real
-async function fetchProductById(id: string): Promise<Products> {
-  // Aqui você pode fazer uma requisição para sua API ou servidor para obter os detalhes do produto
-  const response = await fetch(`https://dummyjson.com/products/${id}`);
-  const data = await response.json();
-  return data;
-}
+import fetchProductById from "@/data/service/obterProductsById";
 
 export default function ProductDetailPage() {
-  const { id } = useParams() as { id: string }; // Pega o ID da URL e garante que é uma string
+  //useParams() -> Hook que retorna os parâmetros dinâmicos da URL como um objeto.
+  //{ id } = useParams(): Desestrutura o objeto retornado por useParams e extrai o parâmetro id, que é o valor presente na URL (por exemplo, o ID do produto).
+  const { id } = useParams(); // Pega o ID da URL e garante que é uma string
   const [product, setProduct] = useState<Products | null>(null);
 
+  // useEffect é um hook do React que permite executar efeitos colaterais em componentes funcionais
+  // Ex: buscar dados de uma API, manipular o DOM, etc.
+  // o useEffect é executado após a renderização do componente
   useEffect(() => {
     if (id) {
       // Busca o produto ao carregar a página
@@ -39,6 +37,9 @@ export default function ProductDetailPage() {
           <p className="text-xl font-semibold text-green-600 mt-4">
             R$ {product.price.toFixed(2)}
           </p>
+          <span className="text-sm text-gray-400 mt-2">
+            Desconto:{product.discountPercentage}
+          </span>
           <p className="text-sm text-gray-400 mt-2">
             Categoria: {product.category}
           </p>

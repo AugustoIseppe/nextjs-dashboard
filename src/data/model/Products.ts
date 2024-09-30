@@ -6,4 +6,5 @@ export default interface Products {
     price: number;
     thumbnail: string;
     description: string;
+    discountPercentage: number;
 }

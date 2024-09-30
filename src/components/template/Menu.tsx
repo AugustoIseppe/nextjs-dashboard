@@ -18,13 +18,13 @@ export default function Menu() {
         <MenuItem texto="Não Existe" href="/nao-existe" icone={IconError404} />
         <MenuItem
           texto="Fetch Api - JsonPlaceholder"
-          href="/placeholder"
+          href="/posts"
           icone={IconArrowsDiff}
         />
         <MenuItem
           texto="Fetch Api - DummyJson"
           href="/products"
-          icone={IconUserHexagon}
+          icone={IconArrowsDiff}
         />
         <MenuItem texto="Produtos" href="/produtos" icone={IconListDetails} />
         <MenuItem texto="Usuarios" href="/usuarios" icone={IconUserHexagon} />

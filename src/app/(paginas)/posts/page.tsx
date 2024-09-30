@@ -4,7 +4,7 @@ import obterPosts from "@/data/service/obterPosts";
 
 export default async function PaginaUsuarioPorId() {
   const posts = await obterPosts();
-  console.log(posts);
+  // console.log(posts);
 
   return (
     <div className="flex flex-col gap-6">

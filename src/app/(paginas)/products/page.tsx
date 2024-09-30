@@ -4,7 +4,7 @@ import obterProducts from "@/data/service/obterProducts";
 
 export default async function ProductsDummyPage() {
   const products = await obterProducts();
-  console.log(`TIPO DO PRODUTO: ${typeof products}`);
+  // console.log(`TIPO DO PRODUTO: ${typeof products}`);
 
   return (
     <div className="flex flex-col gap-6">

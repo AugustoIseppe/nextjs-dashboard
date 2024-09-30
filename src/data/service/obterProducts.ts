@@ -5,3 +5,4 @@ export default async function obterProducts () {
     let posts = await data.json()
     return posts
 }
+
